@@ -1,6 +1,6 @@
 ---
 site:
-  title: Showroom Template Demo
+  title: "Hands-On AIOps: Building Self-Healing, Observability-Driven Automation with Ansible"
   url: https://github.com/rhpds/showroom_template_nookbag
   start_page: modules::index.adoc
 
