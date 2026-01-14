@@ -1,0 +1,28 @@
+= Section 7 - AI Driven Ansible for Network Automation
+
+== Objective
+
+This lab synthesizes the 🧠 AI skills from the preceding sections of the {lab_name} into a practical network automation scenario. In this section, we will leverage AI to generate Ansible playbooks designed to troubleshoot OSPF routing issues. This approach allows network experts to codify their deep troubleshooting knowledge into automated, repeatable workflows. As a result, this process lowers the barrier to entry for new engineers and enables senior experts to validate and test automation playbooks more rapidly before production deployment. To simulate a realistic operational environment, this lab integrates Splunk and Event-Driven Ansible, creating a complete feedback loop to observe network events, decide on a course of action, and automatically act on OSPF-related issues
+
+== The Lab Topology
+The lab environment is composed of the following components:
+
+* Splunk Enterprise
+* Ansible Automation Controller
+* Ansible Lightpeed AI API
+* Ansible Event Driven Ansible 
+* Cisco Cat8000v routers
+
+image::lab_topo.png[Lab Topology,150%,150%]
+
+=== Lab Overview
+The aforementioned depiction of the lab is explained as follows: This lab demonstrates a closed-loop, AI-powered remediation workflow. It begins when a misconfiguration on the Cisco router causes an OSPF neighbor relationship to drop. The router sends a syslog message to 🔍 Splunk, which detects the "OSPF down" event and triggers an alert. This alert sends a webhook to the 📡 Event-Driven Ansible (EDA) controller, which in turn launches a workflow in 🔁 Ansible Automation Platform (AAP).
+
+The workflow dynamically generates a remediation playbook using an AI prompt. For safety, AAP first validates this playbook in "check mode." Once verified, it executes the playbook to apply the correct OSPF configuration, automatically restoring the router and resolving the issue.
+
+[quote]
+⚠️ Note, this lab includes a workflow, associated project, inventories, gitea repository, job-templates that were preloaded. However, you will be required to provide configurations to the Splunk, EDA, and the Cisco router to complete the subsequent exercises.
+
+== Complete
+
+You have completed this module. Move forward to the next section to setup Splunk.
